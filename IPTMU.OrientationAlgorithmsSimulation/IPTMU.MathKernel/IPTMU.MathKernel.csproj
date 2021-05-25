@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Common\Angle.cs" />
+    <Compile Include="Common\DoubleExtensions.cs" />
     <Compile Include="OrientationParameters\Quaternion.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
