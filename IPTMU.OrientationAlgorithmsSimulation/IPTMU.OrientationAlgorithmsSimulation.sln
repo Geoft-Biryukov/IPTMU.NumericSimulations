@@ -5,6 +5,10 @@ VisualStudioVersion = 16.0.31005.135
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IPTMU.MathKernel", "IPTMU.MathKernel\IPTMU.MathKernel.csproj", "{507A3D9F-F248-4391-B4FD-34C073725C25}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IPTMU.AngularMotionSimulation", "IPTMU.AngularMotionSimulation\IPTMU.AngularMotionSimulation.csproj", "{0D50E758-FD44-4F97-9F84-2F0F6B164B4A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IPTMU.Auxiliaries", "IPTMU.Auxiliaries\IPTMU.Auxiliaries.csproj", "{EA12D909-8AB1-4F56-8EA3-FD4E303418C1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +19,14 @@ Global
 		{507A3D9F-F248-4391-B4FD-34C073725C25}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{507A3D9F-F248-4391-B4FD-34C073725C25}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{507A3D9F-F248-4391-B4FD-34C073725C25}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0D50E758-FD44-4F97-9F84-2F0F6B164B4A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0D50E758-FD44-4F97-9F84-2F0F6B164B4A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0D50E758-FD44-4F97-9F84-2F0F6B164B4A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0D50E758-FD44-4F97-9F84-2F0F6B164B4A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA12D909-8AB1-4F56-8EA3-FD4E303418C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA12D909-8AB1-4F56-8EA3-FD4E303418C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA12D909-8AB1-4F56-8EA3-FD4E303418C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA12D909-8AB1-4F56-8EA3-FD4E303418C1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
