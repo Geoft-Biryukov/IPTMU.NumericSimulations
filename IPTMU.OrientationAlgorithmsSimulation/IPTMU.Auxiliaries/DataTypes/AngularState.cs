@@ -7,9 +7,9 @@ using System.Threading.Tasks;
 
 namespace IPTMU.Auxiliaries.DataTypes
 {
-    public class AngularMotion
+    public class AngularState
     {
-        public AngularMotion(Quaternion orientation, Quaternion angularVelocity)
+        public AngularState(Quaternion orientation, Quaternion angularVelocity)
         {
             Orientation = orientation;
             AngularVelocity = angularVelocity;

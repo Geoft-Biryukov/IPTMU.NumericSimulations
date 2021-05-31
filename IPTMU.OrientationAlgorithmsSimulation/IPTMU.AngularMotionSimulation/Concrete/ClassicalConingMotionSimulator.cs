@@ -1,4 +1,5 @@
 ﻿using IPTMU.AngularMotionSimulation.Abstract;
+using IPTMU.AngularMotionSimulation.Concrete.AngularMotionParameters;
 using IPTMU.Auxiliaries.DataTypes;
 using IPTMU.MathKernel.Common;
 using IPTMU.MathKernel.OrientationParameters;
@@ -13,27 +14,25 @@ namespace IPTMU.AngularMotionSimulation.Concrete
     /// Functional Iterative Integration versus Taylor Series Expansion 
     /// </summary>
     public class ClassicalConingMotionSimulator : IAngularMotionSimulator
-    {
-        private readonly double omegaCapital;
-        private readonly Angle alpha;
+    {       
+        private readonly ClassicalConingMotionParameters motionParameters;              
 
         /// <summary>
         /// Классическое коническое движение
         /// </summary>
-        /// <param name="omegaCapital">Круговая частота конического движения (рад/с)</param>
-        /// <param name="alpha">Угол полураствора конуса</param>
-        public ClassicalConingMotionSimulator(double omegaCapital, Angle alpha)
+        /// <param name="motionParameters"></param>
+        public ClassicalConingMotionSimulator(ClassicalConingMotionParameters motionParameters)
         {
-            this.omegaCapital = omegaCapital;
-            this.alpha = alpha;
+            this.motionParameters = motionParameters ?? throw new ArgumentNullException(nameof(motionParameters));
         }
 
-        public AngularMotion GetAngularMotion(double t)
+        public AngularState GetAngularMotion(double t)
         {
             if(t < 0)
                 throw new ArgumentOutOfRangeException($"{nameof(t)} < 0");
 
-            var alphaRad = alpha.Rad;
+            var alphaRad = motionParameters.Alpha.Rad;
+            var omegaCapital = motionParameters.Omega;
 
             var omega = new Quaternion(
                 0,
@@ -47,7 +46,7 @@ namespace IPTMU.AngularMotionSimulation.Concrete
                 Math.Sin(0.5 * alphaRad) * Math.Cos(omegaCapital * t),
                 Math.Sin(0.5 * alphaRad) * Math.Sin(omegaCapital * t));
 
-            return new AngularMotion(lambda, omega);
+            return new AngularState(lambda, omega);
         }
     }
 }

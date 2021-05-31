@@ -42,7 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IAngularMotionSimulator.cs" />
+    <Compile Include="Concrete\AngularMotionParameters\ClassicalConingMotionParameters.cs" />
+    <Compile Include="Concrete\AngularMotionParameters\GeneralizedConicalPrecessionParameters.cs" />
     <Compile Include="Concrete\ClassicalConingMotionSimulator.cs" />
+    <Compile Include="Concrete\GeneralizedConicalPrecessionSimulator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup />

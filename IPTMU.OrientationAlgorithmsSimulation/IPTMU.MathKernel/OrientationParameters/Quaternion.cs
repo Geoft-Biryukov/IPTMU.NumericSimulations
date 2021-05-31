@@ -256,6 +256,16 @@ namespace IPTMU.MathKernel.OrientationParameters
         {
             return new Quaternion(0, 0, 0, 1);
         }
+
+        public static Quaternion Exp(Quaternion q)
+        {                   
+            double b = Math.Sqrt(Norm(Vect(q)));
+
+            if (b == 0) 
+                return Math.Exp(Scal(q)) * CreateIdentity();
+            else
+                return Math.Exp(Scal(q)) * (Math.Cos(b) + (Vect(q) * Math.Sin(b)) / b);                        
+        }
         #endregion
 
         #region creators and helpers

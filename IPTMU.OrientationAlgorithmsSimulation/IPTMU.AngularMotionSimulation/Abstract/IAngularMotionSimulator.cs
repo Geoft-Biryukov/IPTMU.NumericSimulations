@@ -9,6 +9,6 @@ namespace IPTMU.AngularMotionSimulation.Abstract
 {
     public interface IAngularMotionSimulator
     {
-        AngularMotion GetAngularMotion(double t);
+        AngularState GetAngularMotion(double t);
     }
 }
