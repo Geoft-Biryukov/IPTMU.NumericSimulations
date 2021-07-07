@@ -9,6 +9,6 @@ namespace IPTMU.OrientationAlgorithms.Abstract
 {
     public interface IOrientationAlgorithm
     {
-        Quaternion Calculate(Quaternion lambdaPrevious, Quaternion omegaPrevious, Quaternion omegaCurrent);
+        Quaternion Calculate(Quaternion lambdaPrevious, Quaternion omega);
     }
 }
