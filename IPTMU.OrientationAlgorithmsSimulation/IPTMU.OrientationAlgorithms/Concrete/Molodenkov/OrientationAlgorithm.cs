@@ -19,9 +19,23 @@ namespace IPTMU.OrientationAlgorithms.Concrete.Molodenkov
 
         public Quaternion Calculate(Quaternion lambdaPrevious, Quaternion omega)
         {
+
+
             var kappa = lambdaPrevious * (-Quaternion.I2());
 
             var (omega1Caps, mu, nu) = GetAuxiliaries(omega);
+
+            var nuCaps = nu * step;
+            var muCaps = mu * step;
+
+            var w = new Quaternion(0, -mu * Math.Sin(nuCaps), mu * Math.Cos(nuCaps), -2 * nu);
+
+            var arg1 = new Quaternion(0, 0, muCaps / 4, 0);
+            var arg2 = new Quaternion(0, 0, 0, -nuCaps / 2);
+
+            var phiCaps = Quaternion.Exp(arg1) * Quaternion.Exp(arg2);
+
+            var thetaStar = kappa * phiCaps.Conjugate() * step * (phiCaps * w * phiCaps.Conjugate()) * phiCaps * kappa.Conjugate() / 4;
 
             throw new NotImplementedException();
         }
