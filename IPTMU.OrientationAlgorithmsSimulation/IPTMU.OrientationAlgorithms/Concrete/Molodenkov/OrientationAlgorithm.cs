@@ -37,6 +37,14 @@ namespace IPTMU.OrientationAlgorithms.Concrete.Molodenkov
 
             var thetaStar = kappa * phiCaps.Conjugate() * step * (phiCaps * w * phiCaps.Conjugate()) * phiCaps * kappa.Conjugate() / 4;
 
+            var thetaStarNorm = thetaStar.Vect().Norm();
+
+            var e = thetaStar.Vect() / thetaStarNorm;
+            var phi = 4.0 * Math.Atan(thetaStarNorm);
+
+            var sin = Math.Sin(0.5 * phi);
+            var u = new Quaternion(Math.Cos(0.5 * phi), sin * e[1], sin * e[2], sin * e[3]);
+
             throw new NotImplementedException();
         }
 
