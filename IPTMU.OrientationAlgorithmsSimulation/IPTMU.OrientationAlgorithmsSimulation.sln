@@ -11,7 +11,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IPTMU.Auxiliaries", "IPTMU.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IPTMU.OrientationAlgorithms", "IPTMU.OrientationAlgorithms\IPTMU.OrientationAlgorithms.csproj", "{C51B0931-1D23-4576-BCE2-89D25C7C1D10}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IPTMU.OrientationAlgorithmsSimulation", "IPTMU.OrientationAlgorithmsSimulation\IPTMU.OrientationAlgorithmsSimulation.csproj", "{84B23B25-C19C-4DC7-86F3-08060CEB7F1A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "IPTMU.OrientationAlgorithmsSimulation.Logic", "IPTMU.OrientationAlgorithmsSimulation\IPTMU.OrientationAlgorithmsSimulation.Logic.csproj", "{84B23B25-C19C-4DC7-86F3-08060CEB7F1A}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

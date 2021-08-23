@@ -7,8 +7,8 @@
     <ProjectGuid>{0D50E758-FD44-4F97-9F84-2F0F6B164B4A}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>IPTMU.AngularMotionSimulation</RootNamespace>
-    <AssemblyName>IPTMU.AngularMotionSimulation</AssemblyName>
+    <RootNamespace>IPTMU.AngularMotionSimulation.Logic</RootNamespace>
+    <AssemblyName>IPTMU.AngularMotionSimulation.Logic</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <Deterministic>true</Deterministic>
