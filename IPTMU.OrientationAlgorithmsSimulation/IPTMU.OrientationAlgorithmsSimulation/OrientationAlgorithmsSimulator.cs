@@ -1,5 +1,4 @@
-﻿using IPTMU.AngularMotionSimulation.Abstract;
-using IPTMU.AngularMotionSimulation.Concrete;
+﻿
 using IPTMU.OrientationAlgorithms.Abstract;
 using IPTMU.OrientationAlgorithmsSimulation.Options;
 using System;

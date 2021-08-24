@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IPTMU.OrientationSimulation.WinFormsMain.Resources;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -18,6 +19,8 @@ namespace IPTMU.OrientationSimulation.WinFormsMain
         internal void ChangeLanguage(string language)
         {
             Utils.UpdateAppConfig.Update("language", language);
+
+            mainView.ShowInformationMessage(GlobalStrings.RestartNeeded);
         }
     }
 }

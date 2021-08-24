@@ -20,7 +20,7 @@ namespace IPTMU.OrientationSimulation.WinFormsMain
 
             Thread.CurrentThread.CurrentCulture = new System.Globalization.CultureInfo(language);
             Thread.CurrentThread.CurrentUICulture = new System.Globalization.CultureInfo(language);
-
+             
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new OrientationSimulationMainForm());

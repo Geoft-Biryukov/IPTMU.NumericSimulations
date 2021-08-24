@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IPTMU.OrientationSimulation.WinFormsMain.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -18,7 +19,12 @@ namespace IPTMU.OrientationSimulation.WinFormsMain
         {
             InitializeComponent();
 
-            presenter = new OrientationSimulationPresenter(this);
+            presenter = new OrientationSimulationPresenter(this);            
+        }
+
+        public void ShowInformationMessage(string message)
+        {
+            MessageBox.Show(message, string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void englishToolStripMenuItem_Click(object sender, EventArgs e)

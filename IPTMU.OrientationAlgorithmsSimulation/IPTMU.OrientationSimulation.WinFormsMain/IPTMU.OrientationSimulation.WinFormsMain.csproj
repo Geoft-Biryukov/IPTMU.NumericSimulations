@@ -34,6 +34,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
@@ -48,7 +49,13 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="IOrinetationSimulationView.cs" />
+    <Compile Include="Localization\LocolizedDisplayNameAttribute.cs" />
     <Compile Include="OrientationSimulationPresenter.cs" />
+    <Compile Include="Resources\GlobalStrings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GlobalStrings.resx</DependentUpon>
+    </Compile>
     <Compile Include="Utils\UpdateAppConfig.cs" />
     <Compile Include="OrientationSimulationMainForm.cs">
       <SubType>Form</SubType>
@@ -58,6 +65,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\ClassicalConingViewModel.cs" />
+    <Compile Include="ViewModels\NotifyPropertyChangedImpl.cs" />
+    <Compile Include="ViewModels\SimulationOptionsViewModel.cs" />
     <EmbeddedResource Include="OrientationSimulationMainForm.en.resx">
       <DependentUpon>OrientationSimulationMainForm.cs</DependentUpon>
     </EmbeddedResource>
@@ -68,14 +78,20 @@
       <DependentUpon>OrientationSimulationMainForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
+      <Generator>PublicResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
     </EmbeddedResource>
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Resources\GlobalStrings.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>GlobalStrings.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\GlobalStrings.ru.resx" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -87,7 +103,19 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\IPTMU.AngularMotionSimulation\IPTMU.AngularMotionSimulation.csproj">
+      <Project>{0d50e758-fd44-4f97-9f84-2f0f6b164b4a}</Project>
+      <Name>IPTMU.AngularMotionSimulation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IPTMU.MathKernel\IPTMU.MathKernel.csproj">
+      <Project>{507a3d9f-f248-4391-b4fd-34c073725c25}</Project>
+      <Name>IPTMU.MathKernel</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

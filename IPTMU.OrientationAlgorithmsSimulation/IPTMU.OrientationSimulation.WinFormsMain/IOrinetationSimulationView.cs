@@ -8,5 +8,6 @@ namespace IPTMU.OrientationSimulation.WinFormsMain
 {
     public interface IOrinetationSimulationView
     {
+        void ShowInformationMessage(string message);
     }
 }

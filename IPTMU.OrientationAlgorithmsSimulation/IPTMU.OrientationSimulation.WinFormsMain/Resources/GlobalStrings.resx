@@ -117,10 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="SimulationOptionsMotionPeriod" xml:space="preserve">
-    <value>Time of Motion (s)</value>
-  </data>
-  <data name="SimulationOptionsMotionStep" xml:space="preserve">
-    <value>Step of Motion (s)</value>
+  <data name="RestartNeeded" xml:space="preserve">
+    <value>Restart application to change language</value>
   </data>
 </root>
