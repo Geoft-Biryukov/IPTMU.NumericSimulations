@@ -61,7 +61,16 @@ namespace IPTMU.OrientationSimulation.WinFormsMain.Resources {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Restart application to change language.
+        ///   Looks up a localized string similar to Information.
+        /// </summary>
+        internal static string InformationCaption {
+            get {
+                return ResourceManager.GetString("InformationCaption", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Restart application to change language..
         /// </summary>
         internal static string RestartNeeded {
             get {

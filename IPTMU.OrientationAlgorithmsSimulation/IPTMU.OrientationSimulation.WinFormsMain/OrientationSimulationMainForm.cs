@@ -14,6 +14,7 @@ namespace IPTMU.OrientationSimulation.WinFormsMain
     public partial class OrientationSimulationMainForm : Form, IOrinetationSimulationView
     {
         private readonly OrientationSimulationPresenter presenter;
+        private SimulationOptionsViewModel model;
 
         public OrientationSimulationMainForm()
         {
@@ -22,9 +23,17 @@ namespace IPTMU.OrientationSimulation.WinFormsMain
             presenter = new OrientationSimulationPresenter(this);            
         }
 
-        public void ShowInformationMessage(string message)
+        public void BindSimulationOption(SimulationOptionsViewModel model)
         {
-            MessageBox.Show(message, string.Empty, MessageBoxButtons.OK, MessageBoxIcon.Information);
+            simulationOptionsBindingSource.DataSource = this.model =  model ?? throw new ArgumentNullException(nameof(model));
+
+            motionTypeComboBox.DataSource = Enum.GetValues(model.MotionType.GetType());
+            algorithmComboBox.DataSource = Enum.GetValues(model.AlgorithmType.GetType());
+        }
+
+        public void ShowInformationMessage(string message, string caption)
+        {
+            MessageBox.Show(message, caption, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
         private void englishToolStripMenuItem_Click(object sender, EventArgs e)
@@ -35,6 +44,22 @@ namespace IPTMU.OrientationSimulation.WinFormsMain
         private void russianToolStripMenuItem_Click(object sender, EventArgs e)
         {
             presenter.ChangeLanguage("ru");
+        }
+
+        private void motionTypeComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Enum.TryParse(motionTypeComboBox.SelectedValue.ToString(), out MotionTypes motionType))
+            {
+                model.MotionType = motionType;
+            }
+        }
+
+        private void algorithmComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (Enum.TryParse(algorithmComboBox.SelectedValue.ToString(), out AlgorithmTypes algorithmType))
+            {
+                model.AlgorithmType = algorithmType;
+            }
         }
     }
 }

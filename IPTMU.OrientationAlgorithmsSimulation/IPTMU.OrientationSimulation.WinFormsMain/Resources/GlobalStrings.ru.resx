@@ -117,7 +117,10 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="InformationCaption" xml:space="preserve">
+    <value>Информация</value>
+  </data>
   <data name="RestartNeeded" xml:space="preserve">
-    <value>Перезапустите приложение для смены языка</value>
+    <value>Перезапустите приложение для смены языка.</value>
   </data>
 </root>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using IPTMU.OrientationSimulation.WinFormsMain.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,6 +9,7 @@ namespace IPTMU.OrientationSimulation.WinFormsMain
 {
     public interface IOrinetationSimulationView
     {
-        void ShowInformationMessage(string message);
+        void ShowInformationMessage(string message, string caption);
+        void BindSimulationOption(SimulationOptionsViewModel model);
     }
 }

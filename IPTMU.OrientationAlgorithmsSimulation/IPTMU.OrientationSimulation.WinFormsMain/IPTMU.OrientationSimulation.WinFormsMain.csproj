@@ -65,7 +65,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ViewModels\AlgorithmTypes.cs" />
     <Compile Include="ViewModels\ClassicalConingViewModel.cs" />
+    <Compile Include="ViewModels\MotionTypes.cs" />
     <Compile Include="ViewModels\NotifyPropertyChangedImpl.cs" />
     <Compile Include="ViewModels\SimulationOptionsViewModel.cs" />
     <EmbeddedResource Include="OrientationSimulationMainForm.en.resx">
@@ -92,6 +94,7 @@
       <LastGenOutput>GlobalStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\GlobalStrings.ru.resx" />
+    <None Include="Properties\DataSources\IPTMU.OrientationSimulation.WinFormsMain.ViewModels.SimulationOptionsViewModel.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

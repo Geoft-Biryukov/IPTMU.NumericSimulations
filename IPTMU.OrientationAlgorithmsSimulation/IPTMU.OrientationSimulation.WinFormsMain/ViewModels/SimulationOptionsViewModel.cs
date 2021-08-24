@@ -27,5 +27,18 @@ namespace IPTMU.OrientationSimulation.WinFormsMain.ViewModels
             set => Set(nameof(MotionPeriod), ref motionPeriod, value);
         }
 
+        private MotionTypes motionType = MotionTypes.ClassicalConicalPrecession;
+        public MotionTypes MotionType
+        {
+            get => motionType;
+            set => Set(nameof(MotionType), ref motionType, value);
+        }
+
+        private AlgorithmTypes algorithmType = AlgorithmTypes.Molodenkov;
+        public AlgorithmTypes AlgorithmType
+        {
+            get => algorithmType;
+            set => Set(nameof(AlgorithmTypes), ref algorithmType, value);
+        }
     }
 }
