@@ -48,15 +48,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Localization\LocalizedCategoryAttribute.cs" />
     <Compile Include="Views\IOrinetationSimulationView.cs" />
-    <Compile Include="Localization\LocolizedDisplayNameAttribute.cs" />
+    <Compile Include="Localization\LocalizedDisplayNameAttribute.cs" />
     <Compile Include="Presenters\OrientationSimulationPresenter.cs" />
     <Compile Include="Resources\GlobalStrings.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>GlobalStrings.resx</DependentUpon>
     </Compile>
-    <Compile Include="Utils\UpdateAppConfig.cs" />
+    <Compile Include="Localization\UpdateAppConfig.cs" />
     <Compile Include="Views\OrientationSimulationMainForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -66,7 +67,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ViewModels\AlgorithmTypes.cs" />
-    <Compile Include="ViewModels\ClassicalConingViewModel.cs" />
+    <Compile Include="ViewModels\MotionSimulatorsSettings\ClassicalConingViewModel.cs" />
     <Compile Include="ViewModels\MotionTypes.cs" />
     <Compile Include="ViewModels\NotifyPropertyChangedImpl.cs" />
     <Compile Include="ViewModels\SimulationOptionsViewModel.cs" />

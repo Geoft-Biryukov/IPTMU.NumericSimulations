@@ -21,7 +21,8 @@ namespace IPTMU.OrientationSimulation.WinFormsMain.Views
         {
             InitializeComponent();
 
-            presenter = new OrientationSimulationPresenter(this);            
+            presenter = new OrientationSimulationPresenter(this);
+            
         }
 
         public void BindSimulationOption(SimulationOptionsViewModel model)
@@ -30,6 +31,8 @@ namespace IPTMU.OrientationSimulation.WinFormsMain.Views
 
             motionTypeComboBox.DataSource = Enum.GetValues(model.MotionType.GetType());
             algorithmComboBox.DataSource = Enum.GetValues(model.AlgorithmType.GetType());
+
+            generalSettingsPropertyGrid.SelectedObject = model;
         }
 
         public void ShowInformationMessage(string message, string caption)
@@ -45,6 +48,11 @@ namespace IPTMU.OrientationSimulation.WinFormsMain.Views
         private void russianToolStripMenuItem_Click(object sender, EventArgs e)
         {
             presenter.ChangeLanguage("ru");
+        }
+        
+        private void startButton_Click(object sender, EventArgs e)
+        {
+            presenter.StartSimulation();
         }
 
         private void motionTypeComboBox_SelectedIndexChanged(object sender, EventArgs e)
@@ -62,5 +70,11 @@ namespace IPTMU.OrientationSimulation.WinFormsMain.Views
                 model.AlgorithmType = algorithmType;
             }
         }
+
+        public void SetMotionSettings(object dataSource)
+        {
+            motionSettingsPropertyGrid.SelectedObject = dataSource;
+        }
+       
     }
 }

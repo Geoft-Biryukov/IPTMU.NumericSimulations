@@ -1,5 +1,6 @@
 ﻿using IPTMU.AngularMotionSimulation.Concrete.AngularMotionParameters;
 using IPTMU.MathKernel.Common;
+using IPTMU.OrientationSimulation.WinFormsMain.Localization;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -7,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IPTMU.OrientationSimulation.WinFormsMain.ViewModels
+namespace IPTMU.OrientationSimulation.WinFormsMain.ViewModels.MotionSimulatorsSettings
 {
     public class ClassicalConingViewModel : INotifyPropertyChanged
     {
@@ -19,10 +20,10 @@ namespace IPTMU.OrientationSimulation.WinFormsMain.ViewModels
             this.motionParameters = motionParameters ?? throw new ArgumentNullException(nameof(motionParameters));
         }
 
-        [DisplayName("Круговая частота (рад/с)")]
+        [LocalizedDisplayName("ClassicalConingAngularFrequency")]
         public double Omega
         {
-            get => motionParameters.Omega;
+            get => Math.Round(motionParameters.Omega, 7);
             set
             {
                 if (motionParameters.Omega == value)
@@ -33,10 +34,10 @@ namespace IPTMU.OrientationSimulation.WinFormsMain.ViewModels
             }
         }
 
-        [DisplayName("Угол полураствора конуса (гр)")]
+        [LocalizedDisplayName("ConingAngle")]
         public double Alpha
         {
-            get => motionParameters.Alpha.Deg;
+            get => Math.Round(motionParameters.Alpha.Deg, 3);
             set
             {
                 if (motionParameters.Alpha.Deg == value)

@@ -117,10 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="ClassicalConingAngularFrequency" xml:space="preserve">
+    <value>Частота прецессии (рад/с)</value>
+  </data>
+  <data name="ConingAngle" xml:space="preserve">
+    <value>Угол прецессии (гр)</value>
+  </data>
   <data name="InformationCaption" xml:space="preserve">
     <value>Информация</value>
   </data>
   <data name="RestartNeeded" xml:space="preserve">
     <value>Перезапустите приложение для смены языка.</value>
+  </data>
+  <data name="SimulationOptionsAlgorithmType" xml:space="preserve">
+    <value>Алгоритм</value>
+  </data>
+  <data name="SimulationOptionsMotionPeriod" xml:space="preserve">
+    <value>Время движения (с)</value>
+  </data>
+  <data name="SimulationOptionsMotionStep" xml:space="preserve">
+    <value>Шаг движения (с)</value>
+  </data>
+  <data name="SimulationOptionsMotionType" xml:space="preserve">
+    <value>Тип движения</value>
   </data>
 </root>

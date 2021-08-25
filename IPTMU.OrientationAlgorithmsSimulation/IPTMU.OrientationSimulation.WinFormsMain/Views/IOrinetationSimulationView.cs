@@ -11,5 +11,6 @@ namespace IPTMU.OrientationSimulation.WinFormsMain.Views
     {
         void ShowInformationMessage(string message, string caption);
         void BindSimulationOption(SimulationOptionsViewModel model);
+        void SetMotionSettings(object dataSource);
     }
 }

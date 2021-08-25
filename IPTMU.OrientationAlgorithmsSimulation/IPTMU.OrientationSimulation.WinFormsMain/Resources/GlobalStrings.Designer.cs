@@ -61,6 +61,24 @@ namespace IPTMU.OrientationSimulation.WinFormsMain.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Coning Frequency (rad/s).
+        /// </summary>
+        internal static string ClassicalConingAngularFrequency {
+            get {
+                return ResourceManager.GetString("ClassicalConingAngularFrequency", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Coning Angle (deg).
+        /// </summary>
+        internal static string ConingAngle {
+            get {
+                return ResourceManager.GetString("ConingAngle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Information.
         /// </summary>
         internal static string InformationCaption {
@@ -75,6 +93,42 @@ namespace IPTMU.OrientationSimulation.WinFormsMain.Resources {
         internal static string RestartNeeded {
             get {
                 return ResourceManager.GetString("RestartNeeded", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Algorithm.
+        /// </summary>
+        internal static string SimulationOptionsAlgorithmType {
+            get {
+                return ResourceManager.GetString("SimulationOptionsAlgorithmType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Time of Motion (s).
+        /// </summary>
+        internal static string SimulationOptionsMotionPeriod {
+            get {
+                return ResourceManager.GetString("SimulationOptionsMotionPeriod", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Motion step (s).
+        /// </summary>
+        internal static string SimulationOptionsMotionStep {
+            get {
+                return ResourceManager.GetString("SimulationOptionsMotionStep", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Type of Motion.
+        /// </summary>
+        internal static string SimulationOptionsMotionType {
+            get {
+                return ResourceManager.GetString("SimulationOptionsMotionType", resourceCulture);
             }
         }
     }

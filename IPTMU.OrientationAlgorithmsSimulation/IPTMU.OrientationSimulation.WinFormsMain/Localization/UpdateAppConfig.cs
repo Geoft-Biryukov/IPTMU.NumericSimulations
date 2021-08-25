@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Xml;
 
-namespace IPTMU.OrientationSimulation.WinFormsMain.Utils
+namespace IPTMU.OrientationSimulation.WinFormsMain.Localization
 {
     public static class UpdateAppConfig
     {

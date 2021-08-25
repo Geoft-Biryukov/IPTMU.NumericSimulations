@@ -12,7 +12,7 @@ namespace IPTMU.OrientationSimulation.WinFormsMain.ViewModels
     public class SimulationOptionsViewModel : NotifyPropertyChangedImpl
     {
         private double motionStep = 1e-2;
-        [Localization.LocolizedDisplayName("SimulationOptionsMotionStep")]
+        [Localization.LocalizedDisplayName("SimulationOptionsMotionStep")]
         public double MotionStep 
         {
             get => motionStep;
@@ -20,7 +20,7 @@ namespace IPTMU.OrientationSimulation.WinFormsMain.ViewModels
         }
 
         private double motionPeriod = 600;
-        [DisplayName("Время движения (с)")]
+        [Localization.LocalizedDisplayName("SimulationOptionsMotionPeriod")]
         public double MotionPeriod
         {
             get => motionPeriod;
@@ -28,6 +28,7 @@ namespace IPTMU.OrientationSimulation.WinFormsMain.ViewModels
         }
 
         private MotionTypes motionType = MotionTypes.ClassicalConicalPrecession;
+        [Localization.LocalizedDisplayName("SimulationOptionsMotionType")]
         public MotionTypes MotionType
         {
             get => motionType;
@@ -35,6 +36,7 @@ namespace IPTMU.OrientationSimulation.WinFormsMain.ViewModels
         }
 
         private AlgorithmTypes algorithmType = AlgorithmTypes.Molodenkov;
+        [Localization.LocalizedDisplayName("SimulationOptionsAlgorithmType")]
         public AlgorithmTypes AlgorithmType
         {
             get => algorithmType;
