@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IPTMU.OrientationSimulation.WinFormsMain
+namespace IPTMU.OrientationSimulation.WinFormsMain.Views
 {
     public interface IOrinetationSimulationView
     {

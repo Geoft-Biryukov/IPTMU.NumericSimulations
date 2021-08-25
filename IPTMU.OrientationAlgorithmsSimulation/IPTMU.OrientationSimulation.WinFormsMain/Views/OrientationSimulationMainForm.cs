@@ -1,4 +1,5 @@
-﻿using IPTMU.OrientationSimulation.WinFormsMain.ViewModels;
+﻿using IPTMU.OrientationSimulation.WinFormsMain.Presenters;
+using IPTMU.OrientationSimulation.WinFormsMain.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -9,7 +10,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace IPTMU.OrientationSimulation.WinFormsMain
+namespace IPTMU.OrientationSimulation.WinFormsMain.Views
 {
     public partial class OrientationSimulationMainForm : Form, IOrinetationSimulationView
     {

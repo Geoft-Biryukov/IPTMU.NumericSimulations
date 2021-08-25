@@ -1,12 +1,13 @@
 ﻿using IPTMU.OrientationSimulation.WinFormsMain.Resources;
 using IPTMU.OrientationSimulation.WinFormsMain.ViewModels;
+using IPTMU.OrientationSimulation.WinFormsMain.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IPTMU.OrientationSimulation.WinFormsMain
+namespace IPTMU.OrientationSimulation.WinFormsMain.Presenters
 {
     public class OrientationSimulationPresenter
     {

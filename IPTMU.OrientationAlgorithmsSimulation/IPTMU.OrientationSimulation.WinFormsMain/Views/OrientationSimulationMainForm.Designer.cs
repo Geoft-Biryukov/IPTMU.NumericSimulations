@@ -1,5 +1,5 @@
 ﻿
-namespace IPTMU.OrientationSimulation.WinFormsMain
+namespace IPTMU.OrientationSimulation.WinFormsMain.Views
 {
     partial class OrientationSimulationMainForm
     {
@@ -43,18 +43,18 @@ namespace IPTMU.OrientationSimulation.WinFormsMain
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.motionStepNumeric = new System.Windows.Forms.NumericUpDown();
+            this.simulationOptionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.motionTimeNumeric = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.motionTypeComboBox = new System.Windows.Forms.ComboBox();
             this.algorithmComboBox = new System.Windows.Forms.ComboBox();
-            this.simulationOptionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.menuStrip1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.motionStepNumeric)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.motionTimeNumeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.simulationOptionsBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.motionTimeNumeric)).BeginInit();
             this.SuspendLayout();
             // 
             // startButton
@@ -140,6 +140,10 @@ namespace IPTMU.OrientationSimulation.WinFormsMain
             resources.ApplyResources(this.motionStepNumeric, "motionStepNumeric");
             this.motionStepNumeric.Name = "motionStepNumeric";
             // 
+            // simulationOptionsBindingSource
+            // 
+            this.simulationOptionsBindingSource.DataSource = typeof(IPTMU.OrientationSimulation.WinFormsMain.ViewModels.SimulationOptionsViewModel);
+            // 
             // motionTimeNumeric
             // 
             this.motionTimeNumeric.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.simulationOptionsBindingSource, "MotionPeriod", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N2"));
@@ -179,10 +183,6 @@ namespace IPTMU.OrientationSimulation.WinFormsMain
             this.algorithmComboBox.Name = "algorithmComboBox";
             this.algorithmComboBox.SelectedIndexChanged += new System.EventHandler(this.algorithmComboBox_SelectedIndexChanged);
             // 
-            // simulationOptionsBindingSource
-            // 
-            this.simulationOptionsBindingSource.DataSource = typeof(IPTMU.OrientationSimulation.WinFormsMain.ViewModels.SimulationOptionsViewModel);
-            // 
             // OrientationSimulationMainForm
             // 
             resources.ApplyResources(this, "$this");
@@ -198,8 +198,8 @@ namespace IPTMU.OrientationSimulation.WinFormsMain
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.motionStepNumeric)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.motionTimeNumeric)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.simulationOptionsBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.motionTimeNumeric)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
