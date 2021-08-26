@@ -11,8 +11,10 @@ namespace IPTMU.OrientationSimulation.WinFormsMain.ViewModels
 {
     public class SimulationOptionsViewModel : NotifyPropertyChangedImpl
     {
+        #region Common
         private double motionStep = 1e-2;
-        [Localization.LocalizedDisplayName("SimulationOptionsMotionStep")]
+        [Localization.LocalizedCategory("SimulationOptionsCommonCategory")]
+        [Localization.LocalizedDisplayName("SimulationOptionsMotionStep")]        
         public double MotionStep 
         {
             get => motionStep;
@@ -20,6 +22,7 @@ namespace IPTMU.OrientationSimulation.WinFormsMain.ViewModels
         }
 
         private double motionPeriod = 600;
+        [Localization.LocalizedCategory("SimulationOptionsCommonCategory")]
         [Localization.LocalizedDisplayName("SimulationOptionsMotionPeriod")]
         public double MotionPeriod
         {
@@ -28,6 +31,7 @@ namespace IPTMU.OrientationSimulation.WinFormsMain.ViewModels
         }
 
         private MotionTypes motionType = MotionTypes.ClassicalConicalPrecession;
+        [Localization.LocalizedCategory("SimulationOptionsCommonCategory")]
         [Localization.LocalizedDisplayName("SimulationOptionsMotionType")]
         public MotionTypes MotionType
         {
@@ -36,11 +40,52 @@ namespace IPTMU.OrientationSimulation.WinFormsMain.ViewModels
         }
 
         private AlgorithmTypes algorithmType = AlgorithmTypes.Molodenkov;
+        [Localization.LocalizedCategory("SimulationOptionsCommonCategory")]
         [Localization.LocalizedDisplayName("SimulationOptionsAlgorithmType")]
         public AlgorithmTypes AlgorithmType
         {
             get => algorithmType;
             set => Set(nameof(AlgorithmTypes), ref algorithmType, value);
         }
+        #endregion
+
+        #region Start orientation
+
+        private double yaw = 0;
+        [Localization.LocalizedCategory("SimulationOptionsStartOrientationCategory")]
+        [Localization.LocalizedDisplayName("SimulationOptionsYaw")]
+        /// <summary>
+        /// Рысканье
+        /// </summary>
+        public double Yaw
+        {
+            get => yaw;
+            set => Set(nameof(Yaw), ref yaw, value);
+        }
+
+        private double roll = 0;
+        [Localization.LocalizedCategory("SimulationOptionsStartOrientationCategory")]
+        [Localization.LocalizedDisplayName("SimulationOptionsRoll")]
+        /// <summary>
+        /// Крен
+        /// </summary>
+        public double Roll
+        {
+            get => roll;
+            set => Set(nameof(Roll), ref roll, value);
+        }
+
+        private double pitch = 0;
+        [Localization.LocalizedCategory("SimulationOptionsStartOrientationCategory")]
+        [Localization.LocalizedDisplayName("SimulationOptionsPitch")]
+        /// <summary>
+        /// Тангаж
+        /// </summary>
+        public double Pitch
+        {
+            get => pitch;
+            set => Set(nameof(Pitch), ref pitch, value);
+        }
+        #endregion
     }
 }

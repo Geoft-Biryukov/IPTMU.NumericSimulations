@@ -106,6 +106,15 @@ namespace IPTMU.OrientationSimulation.WinFormsMain.Resources {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Common.
+        /// </summary>
+        internal static string SimulationOptionsCommonCategory {
+            get {
+                return ResourceManager.GetString("SimulationOptionsCommonCategory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Time of Motion (s).
         /// </summary>
         internal static string SimulationOptionsMotionPeriod {
@@ -129,6 +138,42 @@ namespace IPTMU.OrientationSimulation.WinFormsMain.Resources {
         internal static string SimulationOptionsMotionType {
             get {
                 return ResourceManager.GetString("SimulationOptionsMotionType", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Pitch (deg).
+        /// </summary>
+        internal static string SimulationOptionsPitch {
+            get {
+                return ResourceManager.GetString("SimulationOptionsPitch", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Roll (deg).
+        /// </summary>
+        internal static string SimulationOptionsRoll {
+            get {
+                return ResourceManager.GetString("SimulationOptionsRoll", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Start orientation.
+        /// </summary>
+        internal static string SimulationOptionsStartOrientationCategory {
+            get {
+                return ResourceManager.GetString("SimulationOptionsStartOrientationCategory", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Yaw (deg).
+        /// </summary>
+        internal static string SimulationOptionsYaw {
+            get {
+                return ResourceManager.GetString("SimulationOptionsYaw", resourceCulture);
             }
         }
     }

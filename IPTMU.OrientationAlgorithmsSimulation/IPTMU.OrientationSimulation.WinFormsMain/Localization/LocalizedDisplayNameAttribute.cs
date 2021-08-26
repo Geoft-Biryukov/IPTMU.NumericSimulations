@@ -30,6 +30,6 @@ namespace IPTMU.OrientationSimulation.WinFormsMain.Localization
                 var displayName = resourceManager.GetString(resourceKey); 
                 return string.IsNullOrWhiteSpace(displayName) ? $"[[{resourceKey}]]" : displayName;
             }
-        }
+        }        
     }
 }

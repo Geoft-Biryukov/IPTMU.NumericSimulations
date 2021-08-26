@@ -14,6 +14,7 @@ namespace IPTMU.OrientationSimulation.WinFormsMain.Localization
         private readonly string resourceKey;
 
         public LocalizedCategoryAttribute(string resourceKey)
+            : base (resourceKey)
         {
             if (string.IsNullOrWhiteSpace(resourceKey))
                 throw new ArgumentException($"'{nameof(resourceKey)}' cannot be null or whitespace.", nameof(resourceKey));
@@ -21,12 +22,12 @@ namespace IPTMU.OrientationSimulation.WinFormsMain.Localization
             this.resourceKey = resourceKey;
             resourceManager = new ResourceManager("IPTMU.OrientationSimulation.WinFormsMain.Resources.GlobalStrings",
                 typeof(LocalizedDisplayNameAttribute).Assembly);
-        }
+        }        
 
-        public override string ToString()
+        protected override string GetLocalizedString(string value)
         {
-            var displayName = resourceManager.GetString(resourceKey); 
-            return string.IsNullOrWhiteSpace(displayName) ? $"[[{resourceKey}]]" : displayName;
+            var localizedValue = resourceManager.GetString(value);
+            return string.IsNullOrWhiteSpace(localizedValue) ? $"[[{value}]]" : localizedValue;
         }
     }
 }

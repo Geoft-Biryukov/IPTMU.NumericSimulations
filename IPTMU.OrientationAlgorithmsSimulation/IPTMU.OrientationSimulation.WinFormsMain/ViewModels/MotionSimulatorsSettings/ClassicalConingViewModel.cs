@@ -44,7 +44,7 @@ namespace IPTMU.OrientationSimulation.WinFormsMain.ViewModels.MotionSimulatorsSe
                     return;
 
                 motionParameters.Alpha = Angle.FromDeg(value);
-                RaisePropertyChanged(nameof(Alpha));
+                RaisePropertyChanged(nameof(Alpha));                
             }
         }
 

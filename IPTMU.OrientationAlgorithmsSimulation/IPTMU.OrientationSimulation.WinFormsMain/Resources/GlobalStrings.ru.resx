@@ -132,6 +132,9 @@
   <data name="SimulationOptionsAlgorithmType" xml:space="preserve">
     <value>Алгоритм</value>
   </data>
+  <data name="SimulationOptionsCommonCategory" xml:space="preserve">
+    <value>Общие</value>
+  </data>
   <data name="SimulationOptionsMotionPeriod" xml:space="preserve">
     <value>Время движения (с)</value>
   </data>
@@ -140,5 +143,17 @@
   </data>
   <data name="SimulationOptionsMotionType" xml:space="preserve">
     <value>Тип движения</value>
+  </data>
+  <data name="SimulationOptionsPitch" xml:space="preserve">
+    <value>Тангаж (гр)</value>
+  </data>
+  <data name="SimulationOptionsRoll" xml:space="preserve">
+    <value>Крен (гр) </value>
+  </data>
+  <data name="SimulationOptionsStartOrientationCategory" xml:space="preserve">
+    <value>Начальная ориентация</value>
+  </data>
+  <data name="SimulationOptionsYaw" xml:space="preserve">
+    <value>Рысканье (гр)</value>
   </data>
 </root>

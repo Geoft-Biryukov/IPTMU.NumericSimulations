@@ -186,6 +186,7 @@ namespace IPTMU.OrientationSimulation.WinFormsMain.Views
             // 
             resources.ApplyResources(this.generalSettingsPropertyGrid, "generalSettingsPropertyGrid");
             this.generalSettingsPropertyGrid.Name = "generalSettingsPropertyGrid";
+            this.generalSettingsPropertyGrid.PropertySort = System.Windows.Forms.PropertySort.Categorized;
             // 
             // motionSettingsPropertyGrid
             // 
