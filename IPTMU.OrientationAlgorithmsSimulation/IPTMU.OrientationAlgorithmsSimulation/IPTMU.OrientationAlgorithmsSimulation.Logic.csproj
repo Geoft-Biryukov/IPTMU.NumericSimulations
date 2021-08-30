@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="MotionIterator.cs" />
     <Compile Include="Options\MotionSimulators.cs" />
     <Compile Include="Options\OrientationAlgorithms.cs" />
     <Compile Include="OrientationAlgorithmsSimulator.cs" />
@@ -51,6 +52,14 @@
     <ProjectReference Include="..\IPTMU.AngularMotionSimulation\IPTMU.AngularMotionSimulation.csproj">
       <Project>{0d50e758-fd44-4f97-9f84-2f0f6b164b4a}</Project>
       <Name>IPTMU.AngularMotionSimulation</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IPTMU.Auxiliaries\IPTMU.Auxiliaries.csproj">
+      <Project>{EA12D909-8AB1-4F56-8EA3-FD4E303418C1}</Project>
+      <Name>IPTMU.Auxiliaries</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IPTMU.MathKernel\IPTMU.MathKernel.csproj">
+      <Project>{507A3D9F-F248-4391-B4FD-34C073725C25}</Project>
+      <Name>IPTMU.MathKernel</Name>
     </ProjectReference>
     <ProjectReference Include="..\IPTMU.OrientationAlgorithms\IPTMU.OrientationAlgorithms.csproj">
       <Project>{c51b0931-1d23-4576-bce2-89d25c7c1d10}</Project>

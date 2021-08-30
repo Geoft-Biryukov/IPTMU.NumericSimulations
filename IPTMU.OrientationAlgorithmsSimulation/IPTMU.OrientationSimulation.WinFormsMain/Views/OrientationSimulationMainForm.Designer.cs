@@ -32,7 +32,7 @@ namespace IPTMU.OrientationSimulation.WinFormsMain.Views
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(OrientationSimulationMainForm));
             this.startButton = new System.Windows.Forms.Button();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.mainMenuStrip = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.languageToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -50,12 +50,16 @@ namespace IPTMU.OrientationSimulation.WinFormsMain.Views
             this.algorithmComboBox = new System.Windows.Forms.ComboBox();
             this.generalSettingsPropertyGrid = new System.Windows.Forms.PropertyGrid();
             this.motionSettingsPropertyGrid = new System.Windows.Forms.PropertyGrid();
+            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.simulationOptionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.menuStrip1.SuspendLayout();
+            this.mainMenuStrip.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.motionStepNumeric)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.motionTimeNumeric)).BeginInit();
+            this.groupBox2.SuspendLayout();
+            this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.simulationOptionsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
@@ -64,15 +68,15 @@ namespace IPTMU.OrientationSimulation.WinFormsMain.Views
             resources.ApplyResources(this.startButton, "startButton");
             this.startButton.Name = "startButton";
             this.startButton.UseVisualStyleBackColor = true;
-            this.startButton.Click += new System.EventHandler(this.startButton_Click);
+            this.startButton.Click += new System.EventHandler(this.StartButton_Click);
             // 
-            // menuStrip1
+            // mainMenuStrip
             // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mainMenuStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.fileToolStripMenuItem,
             this.languageToolStripMenuItem});
-            resources.ApplyResources(this.menuStrip1, "menuStrip1");
-            this.menuStrip1.Name = "menuStrip1";
+            resources.ApplyResources(this.mainMenuStrip, "mainMenuStrip");
+            this.mainMenuStrip.Name = "mainMenuStrip";
             // 
             // fileToolStripMenuItem
             // 
@@ -98,13 +102,13 @@ namespace IPTMU.OrientationSimulation.WinFormsMain.Views
             // 
             this.englishToolStripMenuItem.Name = "englishToolStripMenuItem";
             resources.ApplyResources(this.englishToolStripMenuItem, "englishToolStripMenuItem");
-            this.englishToolStripMenuItem.Click += new System.EventHandler(this.englishToolStripMenuItem_Click);
+            this.englishToolStripMenuItem.Click += new System.EventHandler(this.EnglishToolStripMenuItem_Click);
             // 
             // russianToolStripMenuItem
             // 
             this.russianToolStripMenuItem.Name = "russianToolStripMenuItem";
             resources.ApplyResources(this.russianToolStripMenuItem, "russianToolStripMenuItem");
-            this.russianToolStripMenuItem.Click += new System.EventHandler(this.russianToolStripMenuItem_Click);
+            this.russianToolStripMenuItem.Click += new System.EventHandler(this.RussianToolStripMenuItem_Click);
             // 
             // groupBox1
             // 
@@ -172,7 +176,7 @@ namespace IPTMU.OrientationSimulation.WinFormsMain.Views
             this.motionTypeComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.motionTypeComboBox.FormattingEnabled = true;
             this.motionTypeComboBox.Name = "motionTypeComboBox";
-            this.motionTypeComboBox.SelectedIndexChanged += new System.EventHandler(this.motionTypeComboBox_SelectedIndexChanged);
+            this.motionTypeComboBox.SelectedIndexChanged += new System.EventHandler(this.MotionTypeComboBox_SelectedIndexChanged);
             // 
             // algorithmComboBox
             // 
@@ -180,7 +184,7 @@ namespace IPTMU.OrientationSimulation.WinFormsMain.Views
             this.algorithmComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.algorithmComboBox.FormattingEnabled = true;
             this.algorithmComboBox.Name = "algorithmComboBox";
-            this.algorithmComboBox.SelectedIndexChanged += new System.EventHandler(this.algorithmComboBox_SelectedIndexChanged);
+            this.algorithmComboBox.SelectedIndexChanged += new System.EventHandler(this.AlgorithmComboBox_SelectedIndexChanged);
             // 
             // generalSettingsPropertyGrid
             // 
@@ -193,6 +197,20 @@ namespace IPTMU.OrientationSimulation.WinFormsMain.Views
             resources.ApplyResources(this.motionSettingsPropertyGrid, "motionSettingsPropertyGrid");
             this.motionSettingsPropertyGrid.Name = "motionSettingsPropertyGrid";
             // 
+            // groupBox2
+            // 
+            this.groupBox2.Controls.Add(this.generalSettingsPropertyGrid);
+            resources.ApplyResources(this.groupBox2, "groupBox2");
+            this.groupBox2.Name = "groupBox2";
+            this.groupBox2.TabStop = false;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.motionSettingsPropertyGrid);
+            resources.ApplyResources(this.groupBox3, "groupBox3");
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.TabStop = false;
+            // 
             // simulationOptionsBindingSource
             // 
             this.simulationOptionsBindingSource.DataSource = typeof(IPTMU.OrientationSimulation.WinFormsMain.ViewModels.SimulationOptionsViewModel);
@@ -201,20 +219,22 @@ namespace IPTMU.OrientationSimulation.WinFormsMain.Views
             // 
             resources.ApplyResources(this, "$this");
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.generalSettingsPropertyGrid);
-            this.Controls.Add(this.motionSettingsPropertyGrid);
+            this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.startButton);
-            this.Controls.Add(this.menuStrip1);
-            this.MainMenuStrip = this.menuStrip1;
+            this.Controls.Add(this.mainMenuStrip);
+            this.MainMenuStrip = this.mainMenuStrip;
             this.Name = "OrientationSimulationMainForm";
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
+            this.mainMenuStrip.ResumeLayout(false);
+            this.mainMenuStrip.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.motionStepNumeric)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.motionTimeNumeric)).EndInit();
+            this.groupBox2.ResumeLayout(false);
+            this.groupBox3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.simulationOptionsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -224,7 +244,7 @@ namespace IPTMU.OrientationSimulation.WinFormsMain.Views
         #endregion
 
         private System.Windows.Forms.Button startButton;
-        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.MenuStrip mainMenuStrip;
         private System.Windows.Forms.ToolStripMenuItem fileToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem languageToolStripMenuItem;
@@ -243,6 +263,8 @@ namespace IPTMU.OrientationSimulation.WinFormsMain.Views
         private System.Windows.Forms.BindingSource simulationOptionsBindingSource;
         private System.Windows.Forms.PropertyGrid generalSettingsPropertyGrid;
         private System.Windows.Forms.PropertyGrid motionSettingsPropertyGrid;
+        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox groupBox3;
     }
 }
 

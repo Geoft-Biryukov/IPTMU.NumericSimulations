@@ -17,7 +17,7 @@ namespace IPTMU.OrientationAlgorithmsSimulation
             if (options is null) 
                 throw new ArgumentNullException(nameof(options));
 
-            var algorithm = CreateAlgorithm(options.Algorithm, options.IntegrationStep);
+            //var algorithm = CreateAlgorithm(options.Algorithm, options.IntegrationStep);
            // IAngularMotionSimulator motionSimulator = CreateMotionSimulator(options.MotionSimulator);
         }        
 

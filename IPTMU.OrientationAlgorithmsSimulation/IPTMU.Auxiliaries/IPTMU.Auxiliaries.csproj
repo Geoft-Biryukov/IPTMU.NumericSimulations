@@ -44,10 +44,9 @@
     <Compile Include="DataTypes\AngularState.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <ProjectReference Include="..\IPTMU.MathKernel\IPTMU.MathKernel.csproj">
-      <Project>{507a3d9f-f248-4391-b4fd-34c073725c25}</Project>
+      <Project>{507A3D9F-F248-4391-B4FD-34C073725C25}</Project>
       <Name>IPTMU.MathKernel</Name>
     </ProjectReference>
   </ItemGroup>

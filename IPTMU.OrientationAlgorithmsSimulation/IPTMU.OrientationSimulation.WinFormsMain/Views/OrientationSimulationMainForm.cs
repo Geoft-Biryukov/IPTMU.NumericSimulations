@@ -40,22 +40,22 @@ namespace IPTMU.OrientationSimulation.WinFormsMain.Views
             MessageBox.Show(message, caption, MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void englishToolStripMenuItem_Click(object sender, EventArgs e)
+        private void EnglishToolStripMenuItem_Click(object sender, EventArgs e)
         {
             presenter.ChangeLanguage("en");
         }
 
-        private void russianToolStripMenuItem_Click(object sender, EventArgs e)
+        private void RussianToolStripMenuItem_Click(object sender, EventArgs e)
         {
             presenter.ChangeLanguage("ru");
         }
         
-        private void startButton_Click(object sender, EventArgs e)
+        private void StartButton_Click(object sender, EventArgs e)
         {
             presenter.StartSimulation();
         }
 
-        private void motionTypeComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void MotionTypeComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (Enum.TryParse(motionTypeComboBox.SelectedValue.ToString(), out MotionTypes motionType))
             {
@@ -63,7 +63,7 @@ namespace IPTMU.OrientationSimulation.WinFormsMain.Views
             }
         }
 
-        private void algorithmComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        private void AlgorithmComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (Enum.TryParse(algorithmComboBox.SelectedValue.ToString(), out AlgorithmTypes algorithmType))
             {
