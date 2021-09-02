@@ -1,6 +1,7 @@
 ﻿using IPTMU.AngularMotionSimulation.Abstract;
 using IPTMU.AngularMotionSimulation.Logic.Concrete.AngularMotionParameters;
 using IPTMU.Auxiliaries.DataTypes;
+using IPTMU.MathKernel.OrientationParameters;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -19,15 +20,39 @@ namespace IPTMU.AngularMotionSimulation.Logic.Concrete
     public class ClassicalConicalPrecessionSimulator : IAngularMotionSimulator
     {
         private readonly ClassicalConicalPrecessionParameters parameters;
+        private readonly Quaternion omega0;
 
         public ClassicalConicalPrecessionSimulator(ClassicalConicalPrecessionParameters parameters)
         {
             this.parameters = parameters ?? throw new ArgumentNullException(nameof(parameters));
+
+            omega0 = CalculateOmega(0);
         }
 
         public AngularState GetAngularMotion(double t)
         {
-            throw new NotImplementedException();
+            if (t < 0)
+                throw new ArgumentOutOfRangeException($"{nameof(t)} < 0");
+
+            var omega = CalculateOmega(t);
+            var lambda = CalculateLambda(t);
+
+            return new AngularState(lambda, omega);
+        }
+
+        private Quaternion CalculateOmega(double t)
+        {
+            var a = parameters.A;
+            var b = parameters.B;
+            var c = parameters.C;
+
+            return new Quaternion(0, a * Math.Cos(b * t), a * Math.Sin(b * t), c);
+        }
+
+        private Quaternion CalculateLambda(double t)
+        {
+            var b = parameters.B * Quaternion.I3();
+            return  Quaternion.Exp(0.5 * (b - omega0) * t) * Quaternion.Exp(0.5 * b * t);
         }
     }
 }
