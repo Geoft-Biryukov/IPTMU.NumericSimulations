@@ -1,4 +1,6 @@
-﻿using IPTMU.AngularMotionSimulation.Logic.Concrete.AngularMotionParameters;
+﻿using IPTMU.AngularMotionSimulation.Abstract;
+using IPTMU.AngularMotionSimulation.Concrete;
+using IPTMU.AngularMotionSimulation.Logic.Concrete.AngularMotionParameters;
 using IPTMU.OrientationSimulation.WinFormsMain.Localization;
 using System;
 using System.Collections.Generic;
@@ -9,7 +11,7 @@ using System.Threading.Tasks;
 
 namespace IPTMU.OrientationSimulation.WinFormsMain.ViewModels.MotionSimulatorsSettings
 {
-    public class ClassicalConicalPrecessionViewModel : INotifyPropertyChanged, IParametersWrapper<ClassicalConicalPrecessionParameters>
+    public class ClassicalConicalPrecessionViewModel : INotifyPropertyChanged, IParametersWrapper<ClassicalConicalPrecessionParameters>, ISimulatorFactory
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -64,6 +66,9 @@ namespace IPTMU.OrientationSimulation.WinFormsMain.ViewModels.MotionSimulatorsSe
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        public IAngularMotionSimulator Create() => new ClassicalConicalPrecessionSimulator(Parameters);
+
 
         [Browsable(false)]
         public ClassicalConicalPrecessionParameters Parameters { get; }

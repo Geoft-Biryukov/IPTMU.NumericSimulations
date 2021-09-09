@@ -1,4 +1,6 @@
-﻿using IPTMU.AngularMotionSimulation.Concrete.AngularMotionParameters;
+﻿using IPTMU.AngularMotionSimulation.Abstract;
+using IPTMU.AngularMotionSimulation.Concrete;
+using IPTMU.AngularMotionSimulation.Concrete.AngularMotionParameters;
 using IPTMU.MathKernel.Common;
 using IPTMU.OrientationSimulation.WinFormsMain.Localization;
 using System;
@@ -10,7 +12,7 @@ using System.Threading.Tasks;
 
 namespace IPTMU.OrientationSimulation.WinFormsMain.ViewModels.MotionSimulatorsSettings
 {
-    public class ClassicalConingViewModel : INotifyPropertyChanged, IParametersWrapper<ClassicalConingMotionParameters>
+    public class ClassicalConingViewModel : INotifyPropertyChanged, IParametersWrapper<ClassicalConingMotionParameters>, ISimulatorFactory
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
@@ -51,6 +53,10 @@ namespace IPTMU.OrientationSimulation.WinFormsMain.ViewModels.MotionSimulatorsSe
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        public IAngularMotionSimulator Create() 
+            => new ClassicalConingMotionSimulator(Parameters);
+
 
         [Browsable(false)]
         public ClassicalConingMotionParameters Parameters { get; }

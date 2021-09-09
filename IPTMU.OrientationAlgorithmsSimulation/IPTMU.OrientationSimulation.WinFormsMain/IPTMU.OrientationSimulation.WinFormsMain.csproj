@@ -53,6 +53,7 @@
   <ItemGroup>
     <Compile Include="Localization\LocalizedCategoryAttribute.cs" />
     <Compile Include="ViewModels\MotionSimulatorsSettings\ClassicalConicalPrecessionViewModel.cs" />
+    <Compile Include="ViewModels\MotionSimulatorsSettings\ISimulatorFactory.cs" />
     <Compile Include="ViewModels\MotionSimulatorsSettings\IParametersWrapper.cs" />
     <Compile Include="Views\IOrinetationSimulationView.cs" />
     <Compile Include="Localization\LocalizedDisplayNameAttribute.cs" />
@@ -123,6 +124,10 @@
     <ProjectReference Include="..\IPTMU.MathKernel\IPTMU.MathKernel.csproj">
       <Project>{507a3d9f-f248-4391-b4fd-34c073725c25}</Project>
       <Name>IPTMU.MathKernel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IPTMU.OrientationAlgorithms\IPTMU.OrientationAlgorithms.csproj">
+      <Project>{C51B0931-1D23-4576-BCE2-89D25C7C1D10}</Project>
+      <Name>IPTMU.OrientationAlgorithms</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

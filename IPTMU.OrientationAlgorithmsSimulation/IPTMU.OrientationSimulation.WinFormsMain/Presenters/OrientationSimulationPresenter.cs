@@ -1,6 +1,7 @@
 ﻿using IPTMU.AngularMotionSimulation.Concrete.AngularMotionParameters;
 using IPTMU.AngularMotionSimulation.Logic.Concrete.AngularMotionParameters;
 using IPTMU.MathKernel.Common;
+using IPTMU.OrientationAlgorithms.Abstract;
 using IPTMU.OrientationSimulation.WinFormsMain.Resources;
 using IPTMU.OrientationSimulation.WinFormsMain.ViewModels;
 using IPTMU.OrientationSimulation.WinFormsMain.ViewModels.MotionSimulatorsSettings;
@@ -18,7 +19,7 @@ namespace IPTMU.OrientationSimulation.WinFormsMain.Presenters
         private readonly IOrinetationSimulationView mainView;
         private readonly SimulationOptionsViewModel simulationOptions;
 
-        private readonly Dictionary<MotionTypes, object> motionOptions = new Dictionary<MotionTypes, object>();
+        private readonly Dictionary<MotionTypes, ISimulatorFactory> motionOptions = new Dictionary<MotionTypes, ISimulatorFactory>();
 
         public OrientationSimulationPresenter(IOrinetationSimulationView mainView)
         {
@@ -43,11 +44,11 @@ namespace IPTMU.OrientationSimulation.WinFormsMain.Presenters
             };
             motionOptions[MotionTypes.ClassicalConingMotion] = new ClassicalConingViewModel(classicalConingParameters);
 
-            var generalizedConingParameters = new GeneralizedConicalPrecessionParameters
-            {
+            //var generalizedConingParameters = new GeneralizedConicalPrecessionParameters
+            //{
                 
-            };
-            motionOptions[MotionTypes.GeneralizedConicalPrecession] = null;
+            //};
+            //motionOptions[MotionTypes.GeneralizedConicalPrecession] = null;
 
             var classicalPrecessionParameters = new ClassicalConicalPrecessionParameters
             {
@@ -73,7 +74,22 @@ namespace IPTMU.OrientationSimulation.WinFormsMain.Presenters
         
         internal void StartSimulation()
         {
-            
+            var simulator = motionOptions[simulationOptions.MotionType].Create();
+            var algorithm = CreateAlgorithm();
+
+
+        }
+
+        private IOrientationAlgorithm CreateAlgorithm()
+        {
+            switch (simulationOptions.AlgorithmType)
+            {
+                case AlgorithmTypes.Molodenkov:
+                    return new OrientationAlgorithms.Concrete.Molodenkov.OrientationAlgorithm(simulationOptions.MotionStep);                    
+                
+                default:
+                    throw new NotSupportedException();
+            }
         }
     }
 }
