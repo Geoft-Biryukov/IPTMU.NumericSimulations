@@ -43,6 +43,7 @@ namespace IPTMU.OrientationSimulation.WinFormsMain.Views
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.motionStepNumeric = new System.Windows.Forms.NumericUpDown();
+            this.simulationOptionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.motionTimeNumeric = new System.Windows.Forms.NumericUpDown();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -52,15 +53,14 @@ namespace IPTMU.OrientationSimulation.WinFormsMain.Views
             this.motionSettingsPropertyGrid = new System.Windows.Forms.PropertyGrid();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.simulationOptionsBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.mainMenuStrip.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.motionStepNumeric)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.simulationOptionsBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.motionTimeNumeric)).BeginInit();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.simulationOptionsBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // startButton
@@ -147,6 +147,10 @@ namespace IPTMU.OrientationSimulation.WinFormsMain.Views
             resources.ApplyResources(this.motionStepNumeric, "motionStepNumeric");
             this.motionStepNumeric.Name = "motionStepNumeric";
             // 
+            // simulationOptionsBindingSource
+            // 
+            this.simulationOptionsBindingSource.DataSource = typeof(IPTMU.OrientationSimulation.WinFormsMain.ViewModels.SimulationOptionsViewModel);
+            // 
             // motionTimeNumeric
             // 
             this.motionTimeNumeric.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.simulationOptionsBindingSource, "MotionPeriod", true, System.Windows.Forms.DataSourceUpdateMode.OnPropertyChanged, null, "N2"));
@@ -211,10 +215,6 @@ namespace IPTMU.OrientationSimulation.WinFormsMain.Views
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.TabStop = false;
             // 
-            // simulationOptionsBindingSource
-            // 
-            this.simulationOptionsBindingSource.DataSource = typeof(IPTMU.OrientationSimulation.WinFormsMain.ViewModels.SimulationOptionsViewModel);
-            // 
             // OrientationSimulationMainForm
             // 
             resources.ApplyResources(this, "$this");
@@ -232,10 +232,10 @@ namespace IPTMU.OrientationSimulation.WinFormsMain.Views
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.motionStepNumeric)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.simulationOptionsBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.motionTimeNumeric)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.simulationOptionsBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

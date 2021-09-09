@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AutoMapper, Version=10.0.0.0, Culture=neutral, PublicKeyToken=be96cd2c38ef1005, processorArchitecture=MSIL">
+      <HintPath>..\packages\AutoMapper.10.1.1\lib\net461\AutoMapper.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Configuration" />
@@ -49,6 +52,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Localization\LocalizedCategoryAttribute.cs" />
+    <Compile Include="ViewModels\MotionSimulatorsSettings\ClassicalConicalPrecessionViewModel.cs" />
+    <Compile Include="ViewModels\MotionSimulatorsSettings\IParametersWrapper.cs" />
     <Compile Include="Views\IOrinetationSimulationView.cs" />
     <Compile Include="Localization\LocalizedDisplayNameAttribute.cs" />
     <Compile Include="Presenters\OrientationSimulationPresenter.cs" />
@@ -95,6 +100,7 @@
       <LastGenOutput>GlobalStrings.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Resources\GlobalStrings.ru.resx" />
+    <None Include="packages.config" />
     <None Include="Properties\DataSources\IPTMU.OrientationSimulation.WinFormsMain.ViewModels.SimulationOptionsViewModel.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

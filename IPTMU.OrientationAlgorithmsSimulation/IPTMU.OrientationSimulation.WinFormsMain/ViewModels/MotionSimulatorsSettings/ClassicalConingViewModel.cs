@@ -10,26 +10,25 @@ using System.Threading.Tasks;
 
 namespace IPTMU.OrientationSimulation.WinFormsMain.ViewModels.MotionSimulatorsSettings
 {
-    public class ClassicalConingViewModel : INotifyPropertyChanged
+    public class ClassicalConingViewModel : INotifyPropertyChanged, IParametersWrapper<ClassicalConingMotionParameters>
     {
         public event PropertyChangedEventHandler PropertyChanged;
-        private readonly ClassicalConingMotionParameters motionParameters;
 
         public ClassicalConingViewModel(ClassicalConingMotionParameters motionParameters)
         {
-            this.motionParameters = motionParameters ?? throw new ArgumentNullException(nameof(motionParameters));
+            Parameters = motionParameters ?? throw new ArgumentNullException(nameof(motionParameters));
         }
 
         [LocalizedDisplayName("ClassicalConingAngularFrequency")]
         public double Omega
         {
-            get => Math.Round(motionParameters.Omega, 7);
+            get => Math.Round(Parameters.Omega, 7);
             set
             {
-                if (motionParameters.Omega == value)
+                if (Parameters.Omega == value)
                     return;
 
-                motionParameters.Omega = value;
+                Parameters.Omega = value;
                 RaisePropertyChanged(nameof(Omega));
             }
         }
@@ -37,13 +36,13 @@ namespace IPTMU.OrientationSimulation.WinFormsMain.ViewModels.MotionSimulatorsSe
         [LocalizedDisplayName("ConingAngle")]
         public double Alpha
         {
-            get => Math.Round(motionParameters.Alpha.Deg, 3);
+            get => Math.Round(Parameters.Alpha.Deg, 3);
             set
             {
-                if (motionParameters.Alpha.Deg == value)
+                if (Parameters.Alpha.Deg == value)
                     return;
 
-                motionParameters.Alpha = Angle.FromDeg(value);
+                Parameters.Alpha = Angle.FromDeg(value);
                 RaisePropertyChanged(nameof(Alpha));                
             }
         }
@@ -52,5 +51,8 @@ namespace IPTMU.OrientationSimulation.WinFormsMain.ViewModels.MotionSimulatorsSe
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        [Browsable(false)]
+        public ClassicalConingMotionParameters Parameters { get; }
     }
 }

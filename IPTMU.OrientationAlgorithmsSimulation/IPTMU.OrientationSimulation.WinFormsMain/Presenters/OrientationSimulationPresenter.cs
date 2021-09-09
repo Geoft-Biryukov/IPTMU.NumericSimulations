@@ -1,4 +1,5 @@
 ﻿using IPTMU.AngularMotionSimulation.Concrete.AngularMotionParameters;
+using IPTMU.AngularMotionSimulation.Logic.Concrete.AngularMotionParameters;
 using IPTMU.MathKernel.Common;
 using IPTMU.OrientationSimulation.WinFormsMain.Resources;
 using IPTMU.OrientationSimulation.WinFormsMain.ViewModels;
@@ -40,15 +41,22 @@ namespace IPTMU.OrientationSimulation.WinFormsMain.Presenters
                 Alpha = Angle.FromDeg(30),
                 Omega = Math.PI / 6
             };
-            motionOptions[MotionTypes.ClassicalConicalPrecession] = new ClassicalConingViewModel(classicalConingParameters);
+            motionOptions[MotionTypes.ClassicalConingMotion] = new ClassicalConingViewModel(classicalConingParameters);
 
             var generalizedConingParameters = new GeneralizedConicalPrecessionParameters
             {
                 
             };
-            motionOptions[MotionTypes.GeneralizedConicalPrecession] = null; 
+            motionOptions[MotionTypes.GeneralizedConicalPrecession] = null;
+
+            var classicalPrecessionParameters = new ClassicalConicalPrecessionParameters
+            {
+                A = 1, B = Math.PI, C = 1
+            };
+            motionOptions[MotionTypes.ClassicalConicalPrecession] = new ClassicalConicalPrecessionViewModel(classicalPrecessionParameters);
+
         }
-        
+
         private void SimulationOptionsPropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
         {
             if(e.PropertyName.Equals(nameof(SimulationOptionsViewModel.MotionType)))
