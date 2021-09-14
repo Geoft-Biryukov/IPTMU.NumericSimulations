@@ -37,7 +37,7 @@ namespace IPTMU.AngularMotionSimulation.Concrete
             var omega = CalculateOmega(t);
             var lambda = CalculateLambda(t);
 
-            return new AngularState(lambda, omega);
+            return new AngularState(t, lambda, omega);
         }
 
         private Quaternion CalculateOmega(double t)

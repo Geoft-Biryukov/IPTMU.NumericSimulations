@@ -41,12 +41,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Results\ISimulationResultStore.cs" />
     <Compile Include="MotionIterator.cs" />
+    <Compile Include="SimulatorEngine.cs" />
     <Compile Include="Options\MotionSimulators.cs" />
     <Compile Include="Options\OrientationAlgorithms.cs" />
     <Compile Include="OrientationAlgorithmsSimulator.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Options\SimulatorOptions.cs" />
+    <Compile Include="Results\SimulationResultList.cs" />
+    <Compile Include="Results\SimulationResult.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\IPTMU.AngularMotionSimulation\IPTMU.AngularMotionSimulation.csproj">

@@ -2,6 +2,9 @@
 using IPTMU.AngularMotionSimulation.Logic.Concrete.AngularMotionParameters;
 using IPTMU.MathKernel.Common;
 using IPTMU.OrientationAlgorithms.Abstract;
+using IPTMU.OrientationAlgorithmsSimulation;
+using IPTMU.OrientationAlgorithmsSimulation.Options;
+using IPTMU.OrientationAlgorithmsSimulation.Results;
 using IPTMU.OrientationSimulation.WinFormsMain.Resources;
 using IPTMU.OrientationSimulation.WinFormsMain.ViewModels;
 using IPTMU.OrientationSimulation.WinFormsMain.ViewModels.MotionSimulatorsSettings;
@@ -72,12 +75,26 @@ namespace IPTMU.OrientationSimulation.WinFormsMain.Presenters
             mainView.ShowInformationMessage(GlobalStrings.RestartNeeded, GlobalStrings.InformationCaption);
         }
         
-        internal void StartSimulation()
+        async internal void StartSimulation()
         {
             var simulator = motionOptions[simulationOptions.MotionType].Create();
             var algorithm = CreateAlgorithm();
 
+            var options = new SimulatorOptions
+            {
+                MotionTime = simulationOptions.MotionPeriod, 
+                MotionStep = simulationOptions.MotionStep
+            };
 
+            var iterator = new MotionIterator(options, simulator);
+
+            var engine = new SimulatorEngine(iterator, algorithm);
+
+            var results = new SimulationResultList();
+
+            await engine.StartSimulationAsync(results);
+
+            int i = 0;
         }
 
         private IOrientationAlgorithm CreateAlgorithm()

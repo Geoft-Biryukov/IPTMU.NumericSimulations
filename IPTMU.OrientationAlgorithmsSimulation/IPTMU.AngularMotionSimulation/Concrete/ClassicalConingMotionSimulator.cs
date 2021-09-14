@@ -46,7 +46,7 @@ namespace IPTMU.AngularMotionSimulation.Concrete
                 Math.Sin(0.5 * alphaRad) * Math.Cos(omegaCapital * t),
                 Math.Sin(0.5 * alphaRad) * Math.Sin(omegaCapital * t));
 
-            return new AngularState(lambda, omega);
+            return new AngularState(t, lambda, omega);
         }
     }
 }

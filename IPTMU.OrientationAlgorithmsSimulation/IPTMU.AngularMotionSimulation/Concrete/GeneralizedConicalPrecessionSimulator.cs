@@ -47,7 +47,7 @@ namespace IPTMU.AngularMotionSimulation.Concrete
 
             var lambda = motionParameters.Lambda0 * Quaternion.Conjugate(k) * innerLambda * k;
 
-            return new AngularState(lambda, omega);
+            return new AngularState(t, lambda, omega);
             
         }
     }

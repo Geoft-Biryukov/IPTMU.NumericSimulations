@@ -121,9 +121,17 @@
       <Project>{0d50e758-fd44-4f97-9f84-2f0f6b164b4a}</Project>
       <Name>IPTMU.AngularMotionSimulation</Name>
     </ProjectReference>
+    <ProjectReference Include="..\IPTMU.Auxiliaries\IPTMU.Auxiliaries.csproj">
+      <Project>{ea12d909-8ab1-4f56-8ea3-fd4e303418c1}</Project>
+      <Name>IPTMU.Auxiliaries</Name>
+    </ProjectReference>
     <ProjectReference Include="..\IPTMU.MathKernel\IPTMU.MathKernel.csproj">
       <Project>{507a3d9f-f248-4391-b4fd-34c073725c25}</Project>
       <Name>IPTMU.MathKernel</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\IPTMU.OrientationAlgorithmsSimulation\IPTMU.OrientationAlgorithmsSimulation.Logic.csproj">
+      <Project>{84b23b25-c19c-4dc7-86f3-08060ceb7f1a}</Project>
+      <Name>IPTMU.OrientationAlgorithmsSimulation.Logic</Name>
     </ProjectReference>
     <ProjectReference Include="..\IPTMU.OrientationAlgorithms\IPTMU.OrientationAlgorithms.csproj">
       <Project>{C51B0931-1D23-4576-BCE2-89D25C7C1D10}</Project>
