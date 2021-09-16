@@ -26,7 +26,7 @@ namespace IPTMU.OrientationAlgorithmsSimulation
             switch (algorithm)
             {
                 case Options.OrientationAlgorithms.Molodenkov:
-                    return new OrientationAlgorithms.Concrete.Molodenkov.OrientationAlgorithm(integrationStep);
+                    return new OrientationAlgorithms.Concrete.MolodenkovOrientationAlgorithm(integrationStep);
                 default:
                     throw new NotSupportedException();
             }

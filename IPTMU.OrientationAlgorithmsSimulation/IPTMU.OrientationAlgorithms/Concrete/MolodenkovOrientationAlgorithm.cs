@@ -6,13 +6,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace IPTMU.OrientationAlgorithms.Concrete.Molodenkov
+namespace IPTMU.OrientationAlgorithms.Concrete
 {
-    public class OrientationAlgorithm : IOrientationAlgorithm
+    public class MolodenkovOrientationAlgorithm : IOrientationAlgorithm
     {
         private readonly double step;
 
-        public OrientationAlgorithm(double step)
+        public MolodenkovOrientationAlgorithm(double step)
         {
             this.step = step;
         }

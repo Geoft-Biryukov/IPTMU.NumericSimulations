@@ -102,7 +102,7 @@ namespace IPTMU.OrientationSimulation.WinFormsMain.Presenters
             switch (simulationOptions.AlgorithmType)
             {
                 case AlgorithmTypes.Molodenkov:
-                    return new OrientationAlgorithms.Concrete.Molodenkov.OrientationAlgorithm(simulationOptions.MotionStep);                    
+                    return new OrientationAlgorithms.Concrete.MolodenkovOrientationAlgorithm(simulationOptions.MotionStep);                    
                 
                 default:
                     throw new NotSupportedException();

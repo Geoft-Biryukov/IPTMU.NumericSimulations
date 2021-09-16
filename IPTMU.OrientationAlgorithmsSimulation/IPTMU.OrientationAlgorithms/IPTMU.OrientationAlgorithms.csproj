@@ -42,7 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Abstract\IOrientationAlgorithm.cs" />
-    <Compile Include="Concrete\Molodenkov\OrientationAlgorithm.cs" />
+    <Compile Include="Concrete\AverageSpeedOrientationAlgorithm.cs" />
+    <Compile Include="Concrete\MolodenkovOrientationAlgorithm.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
