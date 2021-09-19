@@ -35,7 +35,7 @@ namespace IPTMU.OrientationAlgorithms.Concrete
 
             var thetaStar = kappa * phiCaps.Conjugate() * step * (phiCaps * w * phiCaps.Conjugate()) * phiCaps * kappa.Conjugate() / 4;
 
-            var thetaStarNorm = thetaStar.Vect().Norm();
+            var thetaStarNorm = Math.Sqrt(thetaStar.Vect().Norm());
 
             var e = thetaStar.Vect() / thetaStarNorm;
             var phi = 4.0 * Math.Atan(thetaStarNorm);
