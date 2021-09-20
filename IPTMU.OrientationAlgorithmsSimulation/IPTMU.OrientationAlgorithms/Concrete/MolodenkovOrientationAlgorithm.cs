@@ -44,7 +44,7 @@ namespace IPTMU.OrientationAlgorithms.Concrete
             var u = new Quaternion(Math.Cos(0.5 * phi), sin * e[1], sin * e[2], sin * e[3]);
 
             var q1 = new Quaternion(0.0, -Math.Sin(nuCaps), Math.Cos(nuCaps), 0.0);
-            var arg3 = new Quaternion(0.0, 0.0, 0.0, muCaps * 0.5);
+            var arg3 = new Quaternion(0.0, 0.0, 0.0, nuCaps * 0.5);
             var arg4 = new Quaternion(0.0, omega1Caps * 0.5, 0.0, 0.0);
             var lambdaApprox = u * kappa * q1 * Quaternion.Exp(arg3) * Quaternion.Exp(arg4);
 

@@ -37,6 +37,8 @@ namespace IPTMU.OrientationAlgorithmsSimulation
                     AngularVelocity = item.AngularVelocity
                 };
 
+                orientation = result.CalculatedOrientation;
+
                 store.Add(result);                                
             }
         }
