@@ -1,6 +1,7 @@
 ﻿using IPTMU.AngularMotionSimulation.Concrete.AngularMotionParameters;
 using IPTMU.AngularMotionSimulation.Logic.Concrete.AngularMotionParameters;
 using IPTMU.MathKernel.Common;
+using IPTMU.MathKernel.OrientationParameters;
 using IPTMU.OrientationAlgorithms.Abstract;
 using IPTMU.OrientationAlgorithmsSimulation;
 using IPTMU.OrientationAlgorithmsSimulation.Options;
@@ -11,6 +12,7 @@ using IPTMU.OrientationSimulation.WinFormsMain.ViewModels.MotionSimulatorsSettin
 using IPTMU.OrientationSimulation.WinFormsMain.Views;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -94,8 +96,27 @@ namespace IPTMU.OrientationSimulation.WinFormsMain.Presenters
 
             await engine.StartSimulationAsync(results);
 
+            using(var writer = File.CreateText("calculatedOrientation.csv"))
+            {
+                foreach (var result in results.Results)
+                {
+                    writer.WriteLine(ToString(result.CalculatedOrientation));
+                }
+            }
+
+            using (var writer = File.CreateText("exactOrientation.csv"))
+            {
+                foreach (var result in results.Results)
+                {
+                    writer.WriteLine(ToString(result.ExactOrientation));
+                }
+            }
+
             int i = 0;
         }
+
+        private static string ToString(Quaternion q)
+            => $"{q.W.ToString()};{q.X.ToString()};{q.Y.ToString()};{q.Z.ToString()}";
 
         private IOrientationAlgorithm CreateAlgorithm()
         {

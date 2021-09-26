@@ -10,6 +10,8 @@ namespace IPTMU.OrientationAlgorithmsSimulation.Results
     {
         private readonly List<SimulationResult> results = new List<SimulationResult>();
 
+        public IEnumerable<SimulationResult> Results => results;
+
         public void Add(SimulationResult result)
         {
             results.Add(result);

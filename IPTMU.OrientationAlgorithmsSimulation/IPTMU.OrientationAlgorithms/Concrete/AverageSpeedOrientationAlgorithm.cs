@@ -10,6 +10,13 @@ namespace IPTMU.OrientationAlgorithms.Concrete
 {
     public class OrientationAlgorithm : IOrientationAlgorithm
     {
+        private readonly double step;
+
+        public OrientationAlgorithm(double step)
+        {
+            this.step = step;
+        }
+
         public Quaternion Calculate(Quaternion lambdaPrevious, Quaternion omega)
         {
             throw new NotImplementedException();
