@@ -8,18 +8,16 @@ using System.Threading.Tasks;
 
 namespace IPTMU.OrientationAlgorithms.Concrete
 {
-    public class OrientationAlgorithm : IOrientationAlgorithm
+    public class AverageSpeedOrientationAlgorithm : IOrientationAlgorithm
     {
         private readonly double step;
 
-        public OrientationAlgorithm(double step)
+        public AverageSpeedOrientationAlgorithm(double step)
         {
             this.step = step;
         }
 
-        public Quaternion Calculate(Quaternion lambdaPrevious, Quaternion omega)
-        {
-            throw new NotImplementedException();
-        }
+        public Quaternion Calculate(Quaternion lambdaPrevious, Quaternion omega) 
+            => lambdaPrevious * Quaternion.Exp(0.5 * omega * step);       
     }
 }

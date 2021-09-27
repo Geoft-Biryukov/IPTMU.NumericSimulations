@@ -52,7 +52,7 @@ namespace IPTMU.AngularMotionSimulation.Concrete
         private Quaternion CalculateLambda(double t)
         {
             var b = parameters.B * Quaternion.I3();
-            return  Quaternion.Exp(0.5 * (b - omega0) * t) * Quaternion.Exp(0.5 * b * t);
+            return   Quaternion.Exp(0.5 * (omega0 + b) * t) * Quaternion.Exp(-0.5 * b * t);
         }
     }
 }

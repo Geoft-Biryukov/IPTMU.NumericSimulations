@@ -32,6 +32,7 @@ namespace IPTMU.OrientationAlgorithmsSimulation
             {
                 var result = new SimulationResult
                 {
+                    Time = item.Time,
                     CalculatedOrientation = algorithm.Calculate(orientation, item.AngularVelocity),
                     ExactOrientation = item.Orientation,
                     AngularVelocity = item.AngularVelocity

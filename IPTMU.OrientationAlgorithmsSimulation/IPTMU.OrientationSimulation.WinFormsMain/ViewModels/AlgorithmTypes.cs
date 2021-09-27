@@ -8,6 +8,7 @@ namespace IPTMU.OrientationSimulation.WinFormsMain.ViewModels
 {
     public enum AlgorithmTypes
     {
-        Molodenkov
+        Molodenkov,
+        AverageSpeed
     }
 }
