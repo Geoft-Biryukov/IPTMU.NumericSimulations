@@ -25,9 +25,9 @@ namespace IPTMU.OrientationAlgorithmsSimulation
         {
             double t = 0;
             while(t < options.MotionTime)
-            {
-                var state = simulator.GetAngularMotion(t);
+            {                
                 t += options.MotionStep;
+                var state = simulator.GetAngularMotion(t);
                 yield return state;
             }
         }

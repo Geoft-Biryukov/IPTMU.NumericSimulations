@@ -12,6 +12,7 @@ using IPTMU.OrientationSimulation.WinFormsMain.ViewModels.MotionSimulatorsSettin
 using IPTMU.OrientationSimulation.WinFormsMain.Views;
 using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -115,8 +116,12 @@ namespace IPTMU.OrientationSimulation.WinFormsMain.Presenters
             int i = 0;
         }
 
+        private static readonly NumberFormatInfo nfi = new NumberFormatInfo
+        {
+             NumberDecimalSeparator = "."
+        };
         private static string ToString(Quaternion q)
-            => $"{q.W.ToString()};{q.X.ToString()};{q.Y.ToString()};{q.Z.ToString()}";
+            => $"{q.W.ToString(nfi)};{q.X.ToString(nfi)};{q.Y.ToString(nfi)};{q.Z.ToString(nfi)}";
 
         private IOrientationAlgorithm CreateAlgorithm()
         {
